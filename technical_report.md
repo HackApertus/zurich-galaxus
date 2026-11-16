@@ -3,7 +3,7 @@
 A deeper write-up than the README: what you built, how it works, and what the
 numbers say.
 
-- **Challenge partner:** ti&m
+- **Challenge partner:** Digitec Galaxus
 - **Challenge:** `challenge name`
 - **Event:** On-site Zurich
 - **Team:** `team name` — `member`, `member`, `member`
