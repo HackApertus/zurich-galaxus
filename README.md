@@ -1,4 +1,4 @@
-# Hack Apertus Zurich — Challenge Partner: ti&m
+# Hack Apertus Zurich — Challenge Partner: Digitec Galaxus
 `challenge name`, `team name`
 
 Template repository for [Hack Apertus](https://hackapertus.ch/) submissions.
