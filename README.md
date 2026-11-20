@@ -12,11 +12,12 @@ The submission must comply with the [HackApertus T&C](https://hackapertus.ch/ter
 
 ## 🎯 The Challenge
 
-`Fill in the title of the challenge you picked and link the Notion challenge page (URL)`
+Hack Apertus x Galaxus: product image classification
+https://www.kaggle.com/competitions/hackapertus-galaxus
 
 ## 🔧 Resources & Tools
 
-Check our resources & tools page for detailed information:
+Check our resources & tools page for more information:
 [Resources & Tools](https://hackapertus.notion.site/zurich-resources-tools)
 
 | Models           | URL                                      |
