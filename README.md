@@ -14,6 +14,29 @@ things in the same place.
 Submissions must use the v1.5 Apertus model family.
 The submission must comply with the [HackApertus T&C](https://hackapertus.ch/terms-and-conditions) and the [model and challenge requirements](https://hackapertus.notion.site/zurich-challenges-model-requirements)
 
+### What you build
+
+Galaxus classifies every product image along six dimensions: what it shows, its background, the perspective,
+whether a person or animal is in it, which text overlay it carries, and the language of its text (41 classes).
+Today a finetuned Qwen 3.5 9B does this. Build an Apertus v1.5 method that can replace it: accurate, fast and
+cheap enough for more than 100,000 images per day, deployable on-premises, air-gapped or in a Swiss cloud.
+
+### How the challenge runs
+
+Data, leaderboard, evaluation and rules are on Kaggle:
+[kaggle.com/competitions/hackapertus-galaxus](https://www.kaggle.com/competitions/hackapertus-galaxus)
+
+| When (CET) | What |
+| --- | --- |
+| 27.11, deep dive | Join the Kaggle competition with the link you get, accept its rules, and name your Kaggle team like your Hack Apertus team. Download the data, including final_encrypted.bin. |
+| During the hack | Train on train.csv and submit dev predictions to the public leaderboard (20 per day). |
+| 28.11, before 13:30 | Post your commit hash and the revision of your model weights in the challenge channel on Discord. |
+| 28.11, 13:30 | We publish the passphrase of the final images in Discord and on Kaggle. Predict them, upload one file with dev and final rows to Kaggle and select it. |
+| 28.11, 14:30 | Deadline for Kaggle and for submitting this repository, the report and the demo on sprintd. |
+
+Your code and model weights are open source under the Hack Apertus T&C. The competition data never goes into
+this repository or your published weights: no images, csv files, labels or the passphrase.
+
 
 ## 🔧 Resources & Tools
 
