@@ -1,19 +1,19 @@
 # Hack Apertus Zurich — Challenge Partner: Digitec Galaxus
-`challenge name`, `team name`
+
+## 🎯 The Challenge
+
+### Hack Apertus x Galaxus: product image classification
+https://www.kaggle.com/competitions/hackapertus-galaxus
+
+`Add your team name`
 
 Template repository for [Hack Apertus](https://hackapertus.ch/) submissions.
 Every project keeps the same layout, so organizers and judges find the same
 things in the same place.
 
-`One paragraph describing the challenge.`
-
 Submissions must use the v1.5 Apertus model family.
 The submission must comply with the [HackApertus T&C](https://hackapertus.ch/terms-and-conditions) and the [model and challenge requirements](https://hackapertus.notion.site/zurich-challenges-model-requirements)
 
-## 🎯 The Challenge
-
-Hack Apertus x Galaxus: product image classification
-https://www.kaggle.com/competitions/hackapertus-galaxus
 
 ## 🔧 Resources & Tools
 
