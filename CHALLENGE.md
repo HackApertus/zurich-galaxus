@@ -77,12 +77,9 @@ By 14:30 on 28 November:
 2. Your project on [sprintd](https://app.sprintd.org/events/hack-apertus-zurich), as Hack Apertus requires and the
    [README](README.md) describes: this repository (public), the demo video, the pitch deck and the technical report.
 
-For this challenge the technical report also fills in section 7 of [technical_report.md](technical_report.md): the
-public score of your selected submission (we take the private score from Kaggle), the macro F1 per dimension, what had
-the biggest impact (ablations welcome), every model used, and the resources (hardware, images per second, estimated
-cost of 100,000 images per day). Your README or section 6 of the report explains setup, training and inference with
-pinned dependencies, configs and seeds. Publish your model weights, for example on Hugging Face, and link them in
-section 7.
+For this challenge the technical report also fills in section 7 of [technical_report.md](technical_report.md):
+scores, what mattered, models, resources and weights. Your README or section 6 of the report explains setup, training
+and inference with pinned dependencies, configs and seeds.
 
 After 13:30 you may fix your code, for example file paths, crashes or the output format, and show the changes as a
 diff. You may not train again or change the weights. We may rerun any team's code on the final images from the posted
