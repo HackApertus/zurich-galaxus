@@ -20,7 +20,7 @@ An Apertus v1.5 method that classifies every Galaxus product image along six dim
 finetuned Qwen 3.5 9B that does this today.
 
 - **The challenge** (task, model rules, timeline, what you hand in, how we assess): [CHALLENGE.md](CHALLENGE.md)
-- **Data, leaderboard, evaluation and competition rules:** [Kaggle](https://www.kaggle.com/competitions/hackapertus-galaxus)
+- **On Kaggle:** [data](https://www.kaggle.com/competitions/hackapertus-galaxus/data), [evaluation](https://www.kaggle.com/competitions/hackapertus-galaxus/overview/evaluation), [leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) and [competition rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules)
 
 The competition data never goes into this repository: no images, csv files, labels or the passphrase.
 
