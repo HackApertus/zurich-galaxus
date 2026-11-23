@@ -23,8 +23,9 @@ For every image, answer one class per dimension, 41 classes in total:
 | text_classification | Which kind of text overlay does the image carry? |
 | text_language | Which language dominates the text? |
 
-Each image comes with product context from our catalog: title, product type, brand, category and subcategory. The
-classes, their definitions and the labeling conventions are in labeling_guideline.md in the
+Each image comes with product context from our catalog: title, product type, brand, category and subcategory. In
+production this context can be missing or poor, so your method should still work without it. The classes, their
+definitions and the labeling conventions are in labeling_guideline.md in the
 [Kaggle data](https://www.kaggle.com/competitions/hackapertus-galaxus/data).
 
 ## Where to find what
@@ -48,6 +49,7 @@ apply. In short:
   assistants, for example to create training targets. Pseudo-labels on the unlabeled dev images are allowed.
 - At runtime your method uses only Apertus and, for supporting tasks, other open-weights models (for example an
   image encoder or OCR). Apertus may run self-hosted or through the inference API that Hack Apertus provides.
+  Closed models and proprietary AI APIs are not allowed at runtime.
 - The solution is deployable on-premises, air-gapped or in a sovereign Swiss cloud, and your technical report lists
   every model you used.
 
@@ -58,7 +60,7 @@ Galaxus shop or by reverse image search.
 
 | When (CET) | What |
 | --- | --- |
-| Fri 27 Nov, 09:00 | Challenge pitches, then the deep dive with the matched teams. Join the Kaggle competition with the link you get there, accept its rules, and name your Kaggle team like your Hack Apertus team. Download the data, including final_encrypted.bin. |
+| Fri 27 Nov, 09:00 | Challenge pitches, then the deep dive with the matched teams. Join the Kaggle competition with the link you get there, accept its rules, and name your Kaggle team like your Hack Apertus team. Download the data, including final_encrypted.bin, and check its SHA-256, so at 13:30 on Saturday you only need the passphrase. |
 | During the hack | Train, and submit dev predictions to the public leaderboard (20 per day). |
 | Sat 28 Nov, before 13:30 | Post your commit hash and the revision of your published model weights in the Galaxus challenge channel on Discord. If you use Apertus unchanged, the commit hash is enough. |
 | Sat 28 Nov, 13:30 | We publish the passphrase of the final images in Discord and in the Discussion tab on Kaggle. Run your method on them: 5,292 images in under an hour need about 2 images per second. |
