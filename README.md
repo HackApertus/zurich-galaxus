@@ -33,6 +33,7 @@ Keep the files and directories as shown below — don't rename or move them.
 | --- | --- |
 | `README.md` | The challenge description and submission requirements |
 | `technical_report.md` | The deeper write-up: architecture, evaluation, limitations |
+| `challenge_description.md` | Complete Challenge description incl. deliverables 
 | `LICENSE` | Apache-2.0 |
 | `src/` | Your code |
 
@@ -68,6 +69,9 @@ The submission must:
 - Max. 2 min demo video of your prototype
 - Add the link to the **Demo** field at the top of [technical_report.md](technical_report.md)
 - Submit the URL of the video.
+
+### Pitch deck (pdf)
+- Max. 10 slides
 
 ## Getting started
 
