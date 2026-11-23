@@ -1,8 +1,5 @@
 # Hack Apertus x Galaxus: product image classification
 
-This file describes the Galaxus challenge. Data, leaderboard and the competition rules are on Kaggle:
-[kaggle.com/competitions/hackapertus-galaxus](https://www.kaggle.com/competitions/hackapertus-galaxus).
-
 ## Why this matters
 
 Galaxus shows millions of product images. Knowing what each image shows decides which image comes first in the
@@ -33,11 +30,12 @@ labeling_guideline.pdf.
 
 | Where | What |
 | --- | --- |
-| This repository | the challenge, model rules, timeline, evaluation and submission file, what you hand in, how we assess |
 | [Kaggle data](https://www.kaggle.com/competitions/hackapertus-galaxus/data) | images, labels, labeling guideline, scoring code, the encrypted final images |
 | [Kaggle leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) | public on the dev images, private on the final images |
 | [Kaggle rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules) | the competition rules, binding for everyone who joins |
-| Hack Apertus Discord, Galaxus challenge channel | questions, commit hashes, the passphrase of the final images |
+| Hack Apertus Discord, Galaxus challenge channel | questions, commit hashes, the passphrase of the final images. The Discord names of the Galaxus hosts, on site on 27 and 28 November, are pinned there |
+| [Kaggle discussion](https://www.kaggle.com/competitions/hackapertus-galaxus/discussion) | questions, the passphrase of the final images |
+| [Resources & Tools](https://hackapertus.notion.site/zurich-resources-tools) | GPUs and the Apertus inference API of Hack Apertus |
 | [sprintd](https://app.sprintd.org/events/hack-apertus-zurich) | your project submission |
 
 ## Models
@@ -53,9 +51,8 @@ apply. In short:
   Closed models and proprietary AI APIs are not allowed at runtime.
 - The solution is deployable on-premises, air-gapped or in a sovereign Swiss cloud, and your technical report lists
   every model you used.
-
-The Kaggle rules (Section B(6)) also forbid labeling dev or final images by hand and looking up the products in the
-Galaxus shop or by reverse image search.
+- Not allowed: labeling dev or final images by hand, and looking up the products in the Galaxus shop or by reverse
+  image search (Kaggle rules, Section B(6)).
 
 ## Timeline
 
@@ -217,9 +214,3 @@ other teams, and delete them afterwards. Your code and model weights are open so
 this repository and your published weights never contain images, csv files, labels or the passphrase. The
 .gitignore of this template already keeps the data files out. The
 [Kaggle competition rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules) are binding.
-
-## Questions
-
-Ask in the Galaxus challenge channel of the Hack Apertus Discord or in the
-[Discussion tab](https://www.kaggle.com/competitions/hackapertus-galaxus/discussion) on Kaggle. The Galaxus hosts are
-on site on 27 and 28 November.
