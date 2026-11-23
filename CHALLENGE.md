@@ -143,8 +143,10 @@ Our reference models on the dev images, scored like the public leaderboard (mean
 | Gemini 4 Argon, zero-shot with our production prompt | 0.834 |
 | Gemini 3.8 Flash, zero-shot with our production prompt | 0.806 |
 
-Their scores per dimension are on the Results page in the Kaggle overview. The scores of Qwen 3.5 9B and Gemini
-3.8 Flash on the final images set the performance groups of the challenge assessment. We publish their final
+All three read the same image files as you. Qwen composites transparent backgrounds onto white, with the function on
+the Kaggle data page, and scales each image to about 512 x 512 pixels in area; the Gemini models get the files
+unchanged. Their scores per dimension are on the Results page in the Kaggle overview. The scores of Qwen 3.5 9B and
+Gemini 3.8 Flash on the final images set the performance groups of the challenge assessment. We publish their final
 scores with the private leaderboard.
 
 ### Scoring locally
