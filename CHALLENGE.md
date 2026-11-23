@@ -148,12 +148,26 @@ scores with the private leaderboard.
 
 ### Scoring locally
 
-metric.py scores a solution file that holds the human label of every scored cell and is empty in every other
-cell. Read both files with `pd.read_csv`: `metric.score(solution, submission, "image_id")` returns the leaderboard
-number, `metric.evaluate(solution, submission, "image_id")` the F1, precision and recall per dimension and class. To
-validate on train.csv, hold out a part of it split by product_id, and in that part empty every label
-whose source is model or whose relevant flag is false. metric.py counts an empty cell in your submission as a
-wrong answer; Kaggle rejects such a file.
+metric.py scores a solution that holds the human label of every scored cell and is empty in every other cell. To
+validate on train.csv, hold out a part of it split by product_id:
+
+```python
+import pandas as pd
+import metric
+
+train = pd.read_csv("train.csv")
+holdout_products = train.product_id.drop_duplicates().sample(frac=0.2, random_state=0)
+holdout = train[train.product_id.isin(holdout_products)]
+solution = holdout[["image_id", *metric.DIMENSIONS]].copy()
+for dimension in metric.DIMENSIONS:
+    unscored = (holdout[f"{dimension}_source"] == "model") | ~holdout[f"{dimension}_relevant"]
+    solution.loc[unscored, dimension] = None
+submission = pd.read_csv("holdout_predictions.csv")
+metric.score(solution, submission, "image_id")
+```
+
+`score` returns the leaderboard number, `metric.evaluate` with the same arguments the F1, precision and recall per
+dimension and class.
 
 ### Submission file
 
@@ -164,7 +178,8 @@ One row per dev and final image, with a header:
     img_00002,infographic,white,front_head_on,none,technical_specs,German
 
 - Every cell holds a class name exactly as listed under Classes above and in labeling_guideline.md, none
-  lowercase: None with a capital N is read as an empty cell. Kaggle rejects a file with an empty cell, and an unknown class name rejects it with a message.
+  lowercase: None with a capital N is read as an empty cell. Kaggle rejects a file with an empty cell or an unknown
+  class name, with a message; locally, metric.py counts an empty cell as a wrong answer.
 - Before 13:30 CET on 28 November, keep the final rows as in sample_submission.csv. They only affect the hidden
   private score.
 - After 13:30 CET, predict the final images and upload one file with dev and final rows, before the deadline at
@@ -173,9 +188,10 @@ One row per dev and final image, with a header:
   and valid. The easiest way is your best dev file with the final rows replaced.
 - Kaggle counts the 20 daily submissions per UTC day, so 28 November starts at 01:00 CET: keep some for the final
   hour from 13:30 to 14:30.
-- Select that submission for the final ranking. A submission from before 13:30 CET still carries the constant
-  answers of sample_submission.csv for the final images. If you select nothing, Kaggle takes your submission with
-  the best public score, which may be one with the constant answers.
+- Upload by about 14:15 and select that submission for the final ranking: Kaggle must score a file before you can
+  select it. A submission from before 13:30 CET still carries the constant answers of sample_submission.csv for the
+  final images. If you select nothing, Kaggle takes your submission with the best public score, which may be one
+  with the constant answers.
 - If Kaggle is down around the deadline, send your final file by direct message to the Galaxus hosts on Discord
   before 14:30 CET. We score it with metric.py, which computes the same score as Kaggle, and rank it with the private
   leaderboard. This is only for an outage of Kaggle: a file that Kaggle rejects stays invalid.
