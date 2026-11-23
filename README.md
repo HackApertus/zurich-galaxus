@@ -42,9 +42,8 @@ Keep the files and directories as shown below — don't rename or move them.
 | Path | What it is |
 | --- | --- |
 | `README.md` | The challenge description and submission requirements |
-| `CHALLENGE.md` | The Galaxus challenge: task, model rules, evaluation, what you hand in |
+| `CHALLENGE.md` | The complete challenge description incl. deliverables: task, model rules, evaluation, what you hand in |
 | `technical_report.md` | The deeper write-up: architecture, evaluation, limitations |
-| `challenge_description.md` | Complete Challenge description incl. deliverables 
 | `LICENSE` | Apache-2.0 |
 | `src/` | Your code |
 
