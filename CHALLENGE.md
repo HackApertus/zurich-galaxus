@@ -111,8 +111,7 @@ Per dimension we compute the F1 of every class and take the unweighted mean (mac
 class in the labels plus every valid class you predicted, so predicting a class that never occurs costs you. The
 leaderboard shows the mean of the six macro F1 scores, so rare classes count as much as frequent ones.
 
-The public leaderboard is computed on the dev images, the private leaderboard on the final images. The Results
-page in the [Kaggle overview](https://www.kaggle.com/competitions/hackapertus-galaxus/overview) shows the macro F1, precision and recall
+The Results page in the [Kaggle overview](https://www.kaggle.com/competitions/hackapertus-galaxus/overview) shows the macro F1, precision and recall
 per dimension and the weighted F1: now for our baselines on the dev images, after the deadline for every team on
 the final images. metric.py in the Kaggle data computes these and the F1, precision and recall per class locally.
 
@@ -120,14 +119,14 @@ the final images. metric.py in the Kaggle data computes these and the F1, precis
 
 One class per dimension, 41 classes in total. labeling_guideline.md in the Kaggle data defines each of them.
 
-| Dimension | Question | Classes |
-| --- | --- | --- |
-| subject | What does the image show? | full_product, detail_closeup, accessories, packaging, package_and_product, multipack_trade_unit, delivery_scope, product_grouping, multiview, energy_label, infographic, logo, placeholder |
-| background | What is behind the product? | white, color, scene_lifestyle |
-| perspective | From where is the product seen? | front_head_on, front_angle_left, front_angle_right, back_head_on, back_angle_left, back_angle_right, left_side, right_side, top_down, bottom_up |
-| individuals | Is a real person or animal in the photo? | individual_present, none |
-| text_classification | Which kind of text overlay does the image carry? | certification_seal, technical_specs, promotional_text, nutritional_info, other, none |
-| text_language | Which language dominates the text? | German, English, French, Italian, Dutch, other, none |
+| Dimension | Classes |
+| --- | --- |
+| subject | full_product, detail_closeup, accessories, packaging, package_and_product, multipack_trade_unit, delivery_scope, product_grouping, multiview, energy_label, infographic, logo, placeholder |
+| background | white, color, scene_lifestyle |
+| perspective | front_head_on, front_angle_left, front_angle_right, back_head_on, back_angle_left, back_angle_right, left_side, right_side, top_down, bottom_up |
+| individuals | individual_present, none |
+| text_classification | certification_seal, technical_specs, promotional_text, nutritional_info, other, none |
+| text_language | German, English, French, Italian, Dutch, other, none |
 
 text_classification is the overlay dimension. none is a real class and is scored like any other.
 
@@ -137,13 +136,13 @@ Our reference models on the dev images, scored like the public leaderboard (mean
 
 | Model | Dev score |
 | --- | --- |
-| Our production model, a finetuned Qwen 3.5 9B | 0.917 |
+| Our production recipe, a finetuned Qwen 3.5 9B trained without the dev and final images | 0.917 |
 | Gemini 4 Argon, zero-shot with our production prompt | 0.834 |
 | Gemini 3.8 Flash, zero-shot with our production prompt | 0.806 |
 
-All three read the same image files as you. Qwen composites transparent backgrounds onto white, with the function on
+All three read the same images as you. Qwen composites transparent backgrounds onto white, with the function on
 the Kaggle data page, and scales each image to about 512 x 512 pixels in area; the Gemini models get the files
-unchanged. Their scores per dimension are on the Results page in the Kaggle overview. The scores of Qwen 3.5 9B and
+unchanged. The scores of Qwen 3.5 9B and
 Gemini 3.8 Flash on the final images set the performance groups of the challenge assessment. We publish their final
 scores with the private leaderboard.
 
