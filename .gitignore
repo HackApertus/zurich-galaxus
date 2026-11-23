@@ -34,3 +34,7 @@ final_images/
 *.zip
 *.7z
 *.csv
+*.parquet
+*.jsonl
+img_*.jpg
+img_*.png
