@@ -190,9 +190,11 @@ all six.
 | Insights: clear evidence of what mattered and what did not | 15% |
 | Code quality and practicality | 15% |
 
-Very good perspective scores and a list of suspected label errors in train.csv (sent to the hosts, not committed)
-earn a bonus. The weights are a guideline: in close cases we prefer the solution that is practical for us to adopt,
-and we explain our reasoning. The awards and the advance to the Zurich finals follow the Hack Apertus process.
+Very good perspective scores and a list of suspected label errors in train.csv earn a bonus. Send the list by 14:30
+on 28 November as a csv with the columns image_id, dimension, label and suggested_label, one row per suspected
+error, by direct message to the Galaxus hosts on Discord, and never commit it. The weights are a guideline: in close
+cases we prefer the solution that is practical for us to adopt, and we explain our reasoning. The awards and the
+advance to the Zurich finals follow the Hack Apertus process.
 
 ## The data stays private
 

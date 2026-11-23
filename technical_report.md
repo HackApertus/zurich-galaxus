@@ -64,7 +64,8 @@ exact commit.
 - **Resources:** hardware (GPU type, VRAM), batch size, images per second, and the estimated cost of
   100,000 images per day.
 - **Weights:** where your model weights are published, and the revision you posted before 13:30.
-- **Optional:** suspected label errors in train.csv, sent to the hosts, not committed here.
+- **Optional:** how many suspected label errors in train.csv you sent to the hosts as a csv (see CHALLENGE.md); the
+  csv itself is not committed here.
 
 
 ## License
