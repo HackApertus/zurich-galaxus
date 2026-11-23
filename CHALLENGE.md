@@ -152,7 +152,9 @@ scores with the private leaderboard.
 ### Scoring locally
 
 metric.py scores a solution file that holds the human label of every scored cell and is empty in every other
-cell. To validate on train.csv, hold out a part of it split by product_id, and in that part empty every label
+cell. Read both files with `pd.read_csv`: `metric.score(solution, submission, "image_id")` returns the leaderboard
+number, `metric.evaluate(solution, submission, "image_id")` the F1, precision and recall per dimension and class. To
+validate on train.csv, hold out a part of it split by product_id, and in that part empty every label
 whose source is model or whose relevant flag is false. metric.py counts an empty cell in your submission as a
 wrong answer; Kaggle rejects such a file.
 
