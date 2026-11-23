@@ -33,7 +33,4 @@ dev_images/
 final_images/
 *.zip
 *.7z
-train.csv
-dev.csv
-final.csv
-sample_submission.csv
+*.csv
