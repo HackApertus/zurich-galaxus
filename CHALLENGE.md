@@ -61,11 +61,13 @@ Galaxus shop or by reverse image search.
 
 | When (CET) | What |
 | --- | --- |
-| Fri 27 Nov, 09:00 | Challenge pitches, then the deep dive with the matched teams. Join the Kaggle competition with the link you get there, accept its rules, and name your Kaggle team like your Hack Apertus team. Download the data, including final_encrypted.bin, and check its SHA-256, so at 13:30 on Saturday you only need the passphrase. |
+| Fri 27 Nov, 09:00 | Challenge pitches, then the deep dive with the matched teams. |
+| Fri 27 Nov, after the deep dive | Join the Kaggle competition with the link from the deep dive and accept its rules. Form your Kaggle team, named like your Hack Apertus team, before your first submission: Kaggle may refuse a later merge. Download the data and check the SHA-256 of final_encrypted.bin. |
 | During the hack | Train, and submit dev predictions to the public leaderboard (20 per day). |
-| Sat 28 Nov, before 13:30 | Post your commit hash and the revision of your published model weights in the Galaxus challenge channel on Discord. If you use Apertus unchanged, the commit hash is enough. |
-| Sat 28 Nov, 13:30 | We publish the passphrase of the final images in Discord and in the Discussion tab on Kaggle. Run your method on them: 5,292 images in under an hour need about 2 images per second. |
+| Sat 28 Nov, before 13:30 | Publish your model weights, for example on Hugging Face, and post your commit hash and the revision of the weights in the Galaxus challenge channel on Discord. If you use Apertus unchanged, the commit hash is enough. |
+| Sat 28 Nov, 13:30 | We publish the passphrase of the final images in Discord and in the Discussion tab on Kaggle. Run your method on them: 5,292 images in one hour need at least 1.5 images per second; plan for 2. |
 | Sat 28 Nov, 14:30 | Deadline for the Kaggle submission and for your project submission on sprintd. |
+| Sat 28 Nov, 15:00 | Team pitches, 7 minutes plus 2 minutes of questions. The top 2 go on to the Zurich finals at 18:30. |
 
 How to decrypt the final images is described in the [Kaggle data](https://www.kaggle.com/competitions/hackapertus-galaxus/data),
 how to build the final submission file under [Submission file](#submission-file) below.
