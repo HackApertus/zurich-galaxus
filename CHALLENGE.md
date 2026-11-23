@@ -1,6 +1,6 @@
 # Hack Apertus x Galaxus: product image classification
 
-This file describes the Galaxus challenge. Data, leaderboard, evaluation and the competition rules are on Kaggle:
+This file describes the Galaxus challenge. Data, leaderboard and the competition rules are on Kaggle:
 [kaggle.com/competitions/hackapertus-galaxus](https://www.kaggle.com/competitions/hackapertus-galaxus).
 
 ## Why this matters
@@ -31,9 +31,8 @@ classes, their definitions and the labeling conventions are in labeling_guidelin
 
 | Where | What |
 | --- | --- |
-| This repository | the challenge, model rules, timeline, what you hand in, how we assess |
+| This repository | the challenge, model rules, timeline, evaluation and submission file, what you hand in, how we assess |
 | [Kaggle data](https://www.kaggle.com/competitions/hackapertus-galaxus/data) | images, labels, labeling guideline, scoring code, the encrypted final images |
-| [Kaggle evaluation](https://www.kaggle.com/competitions/hackapertus-galaxus/overview/evaluation) | metric, scored cells, classes, submission file, baselines |
 | [Kaggle leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) | public on the dev images, private on the final images |
 | [Kaggle rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules) | the competition rules, binding for everyone who joins |
 | Hack Apertus Discord, Galaxus challenge channel | questions, commit hashes, the passphrase of the final images |
@@ -65,9 +64,8 @@ Galaxus shop or by reverse image search.
 | Sat 28 Nov, 13:30 | We publish the passphrase of the final images in Discord and in the Discussion tab on Kaggle. Run your method on them: 5,292 images in under an hour need about 2 images per second. |
 | Sat 28 Nov, 14:30 | Deadline for the Kaggle submission and for your project submission on sprintd. |
 
-How to decrypt the final images and build the final submission file is described on Kaggle, under
-[Data](https://www.kaggle.com/competitions/hackapertus-galaxus/data) and
-[Evaluation](https://www.kaggle.com/competitions/hackapertus-galaxus/overview/evaluation).
+How to decrypt the final images is described in the [Kaggle data](https://www.kaggle.com/competitions/hackapertus-galaxus/data),
+how to build the final submission file under [Submission file](#submission-file) below.
 
 ## What you hand in
 
@@ -88,11 +86,96 @@ diff. You may not train again or change the weights. We may rerun any team's cod
 commit, weights and diff; a score that does not reproduce within its performance group may be disqualified
 ([Kaggle rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules), Section B(7)).
 
+## Evaluation
+
+Submissions are scored with the macro F1 per dimension, averaged over the six dimensions. The public leaderboard
+scores the dev images, the private leaderboard the final images.
+
+### Which cells are scored
+
+Only human labels are scored, and only where the dimension is meaningful for the image:
+
+- subject logo, placeholder or energy_label: background, perspective, individuals and text_classification are not scored
+- subject infographic: background, perspective and individuals are not scored
+- subject delivery_scope, detail_closeup or product_grouping: perspective is not scored
+- background scene_lifestyle: subject and perspective are not scored
+- text_language is scored only when a text overlay is present, or subject is infographic, packaging,
+  package_and_product or full_product
+
+The rules are applied to the human labels only: a model prelabel never triggers a rule. Your answer in a cell that
+is not scored does not matter.
+
+### The score
+
+Per dimension we compute the F1 of every class and take the unweighted mean (macro F1). The classes are every
+class in the labels plus every valid class you predicted, so predicting a class that never occurs costs you. The
+leaderboard shows the mean of the six macro F1 scores, so rare classes count as much as frequent ones.
+
+The public leaderboard is computed on the dev images, the private leaderboard on the final images. After the
+deadline we also publish per team the weighted F1 and the F1, precision and recall per dimension and class.
+metric.py in the Kaggle data computes all of these locally.
+
+### Classes
+
+One class per dimension, 41 classes in total. labeling_guideline.md in the Kaggle data defines each of them.
+
+| Dimension | Question | Classes |
+| --- | --- | --- |
+| subject | What does the image show? | full_product, detail_closeup, accessories, packaging, package_and_product, multipack_trade_unit, delivery_scope, product_grouping, multiview, energy_label, infographic, logo, placeholder |
+| background | What is behind the product? | white, color, scene_lifestyle |
+| perspective | From where is the product seen? | front_head_on, front_angle_left, front_angle_right, back_head_on, back_angle_left, back_angle_right, left_side, right_side, top_down, bottom_up |
+| individuals | Is a real person or animal in the photo? | individual_present, none |
+| text_classification | Which kind of text overlay does the image carry? | certification_seal, technical_specs, promotional_text, nutritional_info, other, none |
+| text_language | Which language dominates the text? | German, English, French, Italian, Dutch, other, none |
+
+text_classification is the overlay dimension. none is a real class and is scored like any other.
+
+### Baselines
+
+Our reference models on the dev images, scored like the public leaderboard (mean macro F1 over the six dimensions):
+
+| Model | Dev score |
+| --- | --- |
+| Our production model, a finetuned Qwen 3.5 9B | 0.917 |
+| Gemini 4 Argon, zero-shot with our production prompt | 0.834 |
+| Gemini 3.8 Flash, zero-shot with our production prompt | 0.806 |
+
+The scores of Qwen 3.5 9B and Gemini 3.8 Flash on the final images set the performance groups of the challenge
+assessment. We publish their final scores with the private leaderboard.
+
+### Scoring locally
+
+metric.py scores a solution file that holds the human label of every scored cell and is empty in every other
+cell. To validate on train.csv, hold out a part of it split by product_id, and in that part empty every label
+whose source is model or whose relevant flag is false. metric.py counts an empty cell in your submission as a
+wrong answer; Kaggle rejects such a file.
+
+### Submission file
+
+One row per dev and final image, with a header:
+
+    image_id,subject,background,perspective,individuals,text_classification,text_language
+    img_00001,full_product,white,front_angle_left,none,none,none
+    img_00002,infographic,white,front_head_on,none,technical_specs,German
+
+- Every cell holds a class name exactly as listed under Classes above and in labeling_guideline.md, none
+  lowercase: None with a capital N is read as an empty cell. Kaggle rejects a file with an empty cell, and an unknown class name rejects it with a message.
+- Before 13:30 CET on 28 November, keep the final rows as in sample_submission.csv. They only affect the hidden
+  private score.
+- After 13:30 CET, predict the final images and upload one file with dev and final rows, before the deadline at
+  14:30 CET (13:30 UTC). Kaggle scores the dev rows for the public and the final rows for the private
+  leaderboard, separately: the dev rows of your final file do not change your final score, but they must be there
+  and valid. The easiest way is your best dev file with the final rows replaced.
+- Kaggle counts the 20 daily submissions per UTC day, so 28 November starts at 01:00 CET: keep some for the final
+  hour from 13:30 to 14:30.
+- Select that submission for the final ranking. A submission from before 13:30 CET still carries the constant
+  answers of sample_submission.csv for the final images. If you select nothing, Kaggle takes your submission with
+  the best public score, which may be one with the constant answers.
+
 ## How we assess
 
 The Kaggle ranking is the private leaderboard. For the assessment of this challenge, its score is the performance
-part, counted in groups against our baselines, whose scores are on the
-[Kaggle Evaluation page](https://www.kaggle.com/competitions/hackapertus-galaxus/overview/evaluation): better than our
+part, counted in groups against our [baselines](#baselines): better than our
 finetuned Qwen 3.5 9B, between Gemini 3.8 Flash and Qwen 3.5 9B, or below Gemini 3.8 Flash. Differences of a few
 tenths of a percent are not decisive. You may focus on some dimensions, but the performance part uses the mean over
 all six.

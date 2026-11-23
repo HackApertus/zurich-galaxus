@@ -19,8 +19,8 @@ The submission must comply with the [HackApertus T&C](https://hackapertus.ch/ter
 An Apertus v1.5 method that classifies every Galaxus product image along six dimensions and can replace the
 finetuned Qwen 3.5 9B that does this today.
 
-- **The challenge** (task, model rules, timeline, what you hand in, how we assess): [CHALLENGE.md](CHALLENGE.md)
-- **On Kaggle:** [data](https://www.kaggle.com/competitions/hackapertus-galaxus/data), [evaluation](https://www.kaggle.com/competitions/hackapertus-galaxus/overview/evaluation), [leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) and [competition rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules)
+- **The challenge** (task, model rules, timeline, evaluation and submission file, what you hand in, how we assess): [CHALLENGE.md](CHALLENGE.md)
+- **On Kaggle:** [data](https://www.kaggle.com/competitions/hackapertus-galaxus/data), [leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) and [competition rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules)
 
 The competition data never goes into this repository: no images, csv files, labels or the passphrase.
 
