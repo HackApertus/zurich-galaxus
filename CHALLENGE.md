@@ -113,9 +113,10 @@ Per dimension we compute the F1 of every class and take the unweighted mean (mac
 class in the labels plus every valid class you predicted, so predicting a class that never occurs costs you. The
 leaderboard shows the mean of the six macro F1 scores, so rare classes count as much as frequent ones.
 
-The public leaderboard is computed on the dev images, the private leaderboard on the final images. After the
-deadline we also publish per team the weighted F1 and the F1, precision and recall per dimension and class.
-metric.py in the Kaggle data computes all of these locally.
+The public leaderboard is computed on the dev images, the private leaderboard on the final images. The Results
+page in the [Kaggle overview](https://www.kaggle.com/competitions/hackapertus-galaxus/overview) shows the macro F1, precision and recall
+per dimension and the weighted F1: now for our baselines on the dev images, after the deadline for every team on
+the final images. metric.py in the Kaggle data computes these and the F1, precision and recall per class locally.
 
 ### Classes
 
@@ -142,8 +143,9 @@ Our reference models on the dev images, scored like the public leaderboard (mean
 | Gemini 4 Argon, zero-shot with our production prompt | 0.834 |
 | Gemini 3.8 Flash, zero-shot with our production prompt | 0.806 |
 
-The scores of Qwen 3.5 9B and Gemini 3.8 Flash on the final images set the performance groups of the challenge
-assessment. We publish their final scores with the private leaderboard.
+Their scores per dimension are on the Results page in the Kaggle overview. The scores of Qwen 3.5 9B and Gemini
+3.8 Flash on the final images set the performance groups of the challenge assessment. We publish their final
+scores with the private leaderboard.
 
 ### Scoring locally
 
