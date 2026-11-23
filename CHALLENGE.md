@@ -188,7 +188,8 @@ The Kaggle ranking is the private leaderboard. For the assessment of this challe
 part, counted in groups against our [baselines](#baselines): better than our
 finetuned Qwen 3.5 9B, between Gemini 3.8 Flash and Qwen 3.5 9B, or below Gemini 3.8 Flash. Differences of a few
 tenths of a percent are not decisive. You may focus on some dimensions, but the performance part uses the mean over
-all six.
+all six. Besides that score, we also look at the weighted F1 and the scores per dimension of your selected submission,
+because the frequent classes make up most of the images in our shop.
 
 | Part | Weight |
 | --- | --- |
