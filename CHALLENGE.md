@@ -181,6 +181,9 @@ One row per dev and final image, with a header:
 - Select that submission for the final ranking. A submission from before 13:30 CET still carries the constant
   answers of sample_submission.csv for the final images. If you select nothing, Kaggle takes your submission with
   the best public score, which may be one with the constant answers.
+- If Kaggle is down around the deadline, send your final file by direct message to the Galaxus hosts on Discord
+  before 14:30 CET. We score it with metric.py, which computes the same score as Kaggle, and rank it with the private
+  leaderboard. This is only for an outage of Kaggle: a file that Kaggle rejects stays invalid.
 
 ## How we assess
 
@@ -217,4 +220,4 @@ this repository and your published weights never contain images, csv files, labe
 
 Ask in the Galaxus challenge channel of the Hack Apertus Discord or in the
 [Discussion tab](https://www.kaggle.com/competitions/hackapertus-galaxus/discussion) on Kaggle. The Galaxus hosts are
-on site on 27 November.
+on site on 27 and 28 November.
