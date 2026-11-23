@@ -93,7 +93,7 @@ commit, weights and diff; a score that does not reproduce within its performance
 The Kaggle ranking is the private leaderboard. For the assessment of this challenge, its score is the performance
 part, counted in groups against our baselines, whose scores are on the
 [Kaggle Evaluation page](https://www.kaggle.com/competitions/hackapertus-galaxus/overview/evaluation): better than our
-finetuned Qwen 3.5 9B, between Gemini 3.5 Flash and Qwen 3.5 9B, or below Gemini 3.5 Flash. Differences of a few
+finetuned Qwen 3.5 9B, between Gemini 3.8 Flash and Qwen 3.5 9B, or below Gemini 3.8 Flash. Differences of a few
 tenths of a percent are not decisive. You may focus on some dimensions, but the performance part uses the mean over
 all six.
 
