@@ -26,7 +26,8 @@ For every image, answer one class per dimension, 41 classes in total:
 Each image comes with product context from our catalog: title, product type, brand, category and subcategory. In
 production this context can be missing or poor, so your method should still work without it. The classes, their
 definitions and the labeling conventions are in labeling_guideline.md in the
-[Kaggle data](https://www.kaggle.com/competitions/hackapertus-galaxus/data).
+[Kaggle data](https://www.kaggle.com/competitions/hackapertus-galaxus/data), and with example images from train.csv in
+labeling_guideline.pdf.
 
 ## Where to find what
 
