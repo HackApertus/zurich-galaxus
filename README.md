@@ -14,6 +14,16 @@ things in the same place.
 Submissions must use the v1.5 Apertus model family.
 The submission must comply with the [HackApertus T&C](https://hackapertus.ch/terms-and-conditions) and the [model and challenge requirements](https://hackapertus.notion.site/zurich-challenges-model-requirements)
 
+### What you build
+
+An Apertus v1.5 method that classifies every Galaxus product image along six dimensions and can replace the
+finetuned Qwen 3.5 9B that does this today.
+
+- **The challenge** (task, model rules, timeline, evaluation and submission file, what you hand in, how we assess): [CHALLENGE.md](CHALLENGE.md)
+- **On Kaggle:** [data](https://www.kaggle.com/competitions/hackapertus-galaxus/data), [leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) and [competition rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules)
+
+The competition data never goes into this repository: no images, csv files, labels or the passphrase.
+
 
 ## 🔧 Resources & Tools
 
@@ -32,8 +42,8 @@ Keep the files and directories as shown below — don't rename or move them.
 | Path | What it is |
 | --- | --- |
 | `README.md` | The challenge description and submission requirements |
+| `CHALLENGE.md` | The complete challenge description incl. deliverables: task, model rules, evaluation, what you hand in |
 | `technical_report.md` | The deeper write-up: architecture, evaluation, limitations |
-| `challenge_description.md` | Complete Challenge description incl. deliverables 
 | `LICENSE` | Apache-2.0 |
 | `src/` | Your code |
 

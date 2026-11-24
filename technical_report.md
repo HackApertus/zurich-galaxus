@@ -54,6 +54,19 @@ Where it breaks, what you did not test, and known failure modes.
 What a judge needs to get your numbers back: hardware, runtime, seeds, and the
 exact commit.
 
+## 7. Galaxus challenge: results and resources
+
+- **Kaggle:** team name and the public score (dev) of your selected submission; we take the private score from Kaggle.
+- **Per dimension:** macro F1 of subject, background, perspective, individuals, text_classification and
+  text_language (metric.py from the competition data computes them on your own validation split).
+- **What mattered:** the changes with the biggest impact on the score (ablations welcome) and what did not work.
+- **Models:** every model used in development and at runtime, with version and role.
+- **Resources:** hardware (GPU type, VRAM), batch size, images per second, and the estimated cost of
+  100,000 images per day.
+- **Weights:** where your model weights are published, and the revision you posted before 13:30.
+- **Optional:** how many suspected label errors in train.csv you sent to the hosts as a csv (see CHALLENGE.md); the
+  csv itself is not committed here.
+
 
 ## License
 

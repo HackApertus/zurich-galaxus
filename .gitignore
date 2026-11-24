@@ -25,3 +25,16 @@ build/
 .DS_Store
 .idea/
 .vscode/
+
+# Galaxus challenge data: never commit
+data/
+train_images/
+dev_images/
+final_images/
+*.zip
+*.7z
+*.csv
+*.parquet
+*.jsonl
+img_*.jpg
+img_*.png
