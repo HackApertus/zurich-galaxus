@@ -104,5 +104,5 @@ As a csv with the columns image_id, dimension, label and suggested_label, by dir
 Discord by 14:30. Never commit it: it contains labels.
 
 **May we show competition images?**
-A few in your pitch, pitch deck and demo video, not in the technical report and never in the repository or your
-weights.
+Yes, a few, in your pitch, pitch deck, demo video and technical report. The image files, csv files and labels never
+go into your repository or your weights.

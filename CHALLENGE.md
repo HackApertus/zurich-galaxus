@@ -226,6 +226,6 @@ advance to the Zurich finals follow the Hack Apertus process.
 
 The competition data and its labels are for this hackathon only: no commercial use, no passing them on, also not to
 other teams, and delete them afterwards. Your code and model weights are open source under the Hack Apertus T&C, but
-this repository and your published weights never contain images, csv files, labels or the passphrase; the .gitignore
-of this template keeps the data files out. You may show a few competition images in your pitch, pitch deck and demo
-video, but not in the technical report.
+this repository and your published weights never contain image files, csv files, labels or the passphrase; the
+.gitignore of this template keeps the data files out. You may show a few competition images in your pitch, pitch
+deck, demo video and technical report.

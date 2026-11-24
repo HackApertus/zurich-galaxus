@@ -23,7 +23,7 @@ finetuned Qwen 3.5 9B that does this today.
 - **Frequent questions:** [FAQ.md](FAQ.md)
 - **On Kaggle:** [data](https://www.kaggle.com/competitions/hackapertus-galaxus/data), [leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) and [competition rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules)
 
-The competition data never goes into this repository: no images, csv files, labels or the passphrase.
+The competition data never goes into this repository: no image files, csv files, labels or the passphrase.
 
 
 ## 🔧 Resources & Tools
