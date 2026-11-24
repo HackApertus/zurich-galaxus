@@ -165,11 +165,11 @@ for dimension in metric.DIMENSIONS:
     unscored = (holdout[f"{dimension}_source"] == "model") | ~holdout[f"{dimension}_relevant"]
     solution.loc[unscored, dimension] = None
 submission = pd.read_csv("holdout_predictions.csv")
-metric.score(solution, submission, "image_id")
+print(metric.score(solution, submission, "image_id"))
 ```
 
 `score` returns the leaderboard number, `metric.evaluate` with the same arguments the F1, precision and recall per
-dimension and class.
+dimension and class. metric.py needs Python 3.10 and pandas 2.1 or newer.
 
 ### Submission file
 
