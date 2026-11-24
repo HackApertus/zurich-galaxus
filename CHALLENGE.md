@@ -58,10 +58,11 @@ apply. In short:
 
 | When (CET) | What |
 | --- | --- |
-| Fri 27 Nov, 09:00 | Challenge pitches, then the deep dive with the matched teams. |
+| Fri 27 Nov, 09:00 | Challenge pitches. |
+| Fri 27 Nov, 10:30 | Deep dive with the matched teams. |
 | Fri 27 Nov, after the deep dive | Join the Kaggle competition with the link from the deep dive and accept its rules. Form your Kaggle team, named like your Hack Apertus team, before your first submission: Kaggle may refuse a later merge. Download the data and check the SHA-256 of final_encrypted.bin. |
 | During the hack | Train, and submit dev predictions to the public leaderboard (20 per day). |
-| Sat 28 Nov, 13:30 | We publish the passphrase of the final images in Discord and in the Discussion tab on Kaggle. Run your method on them, for inference only: 5,292 images in one hour need at least 1.5 images per second; plan for 2. |
+| Sat 28 Nov, 13:00 | We publish the passphrase of the final images in Discord and in the Discussion tab on Kaggle. Run your method on them, for inference only. Plan for at least 2 images per second: the 5,292 images then take about 45 minutes, and your file is on Kaggle by 14:15. |
 | Sat 28 Nov, 14:30 | Deadline for the Kaggle submission and for your project submission on sprintd. |
 | Sat 28 Nov, 15:00 | Team pitches, 7 minutes plus 2 minutes of questions. The top 2 go on to the Zurich finals at 18:30. |
 
@@ -181,16 +182,16 @@ One row per dev and final image, with a header:
 - Every cell holds a class name exactly as listed under Classes above and in labeling_guideline.md, none
   lowercase: None with a capital N is read as an empty cell. Kaggle rejects a file with an empty cell or an unknown
   class name, with a message; locally, metric.py counts an empty cell as a wrong answer.
-- Before 13:30 CET on 28 November, keep the final rows as in sample_submission.csv. They only affect the hidden
+- Before 13:00 CET on 28 November, keep the final rows as in sample_submission.csv. They only affect the hidden
   private score.
-- After 13:30 CET, predict the final images and upload one file with dev and final rows, before the deadline at
+- After 13:00 CET, predict the final images and upload one file with dev and final rows, before the deadline at
   14:30 CET (13:30 UTC). Kaggle scores the dev rows for the public and the final rows for the private
   leaderboard, separately: the dev rows of your final file do not change your final score, but they must be there
   and valid. The easiest way is your best dev file with the final rows replaced.
 - Kaggle counts the 20 daily submissions per UTC day, so 28 November starts at 01:00 CET: keep some for the final
-  hour from 13:30 to 14:30.
+  90 minutes from 13:00 to 14:30.
 - Upload by about 14:15 and select that submission for the final ranking: Kaggle must score a file before you can
-  select it. A submission from before 13:30 CET still carries the constant answers of sample_submission.csv for the
+  select it. A submission from before 13:00 CET still carries the constant answers of sample_submission.csv for the
   final images. If you select nothing, Kaggle takes your submission with the best public score, which may be one
   with the constant answers.
 - If Kaggle is down around the deadline, send your final file by direct message to the Galaxus hosts on Discord
