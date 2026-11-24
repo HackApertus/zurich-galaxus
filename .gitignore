@@ -38,3 +38,4 @@ final_images/
 *.jsonl
 img_*.jpg
 img_*.png
+labeling_guideline.*
