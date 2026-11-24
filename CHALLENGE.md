@@ -30,6 +30,7 @@ labeling_guideline.pdf.
 
 | Where | What |
 | --- | --- |
+| [FAQ.md](FAQ.md) | short answers to frequent questions |
 | [Kaggle data](https://www.kaggle.com/competitions/hackapertus-galaxus/data) | images, labels, labeling guideline, scoring code, the encrypted final images |
 | [Kaggle leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) | public on the dev images, private on the final images |
 | [Kaggle rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules) | the competition rules, binding for everyone who joins |
