@@ -63,7 +63,8 @@ exact commit.
 - **Models:** every model used in development and at runtime, with version and role.
 - **Resources:** hardware (GPU type, VRAM), batch size, images per second, and the estimated cost of
   100,000 images per day.
-- **Weights:** where your model weights are published, and the revision you posted before 13:30.
+- **Commit and weights:** the commit that produced your final submission, and where its model weights are published,
+  with the revision.
 - **Optional:** how many suspected label errors in train.csv you sent to the hosts as a csv (see CHALLENGE.md); the
   csv itself is not committed here.
 

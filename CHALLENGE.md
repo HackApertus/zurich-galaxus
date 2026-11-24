@@ -30,11 +30,12 @@ labeling_guideline.pdf.
 
 | Where | What |
 | --- | --- |
+| [FAQ.md](FAQ.md) | short answers to frequent questions |
 | [Kaggle data](https://www.kaggle.com/competitions/hackapertus-galaxus/data) | images, labels, labeling guideline, scoring code, the encrypted final images |
 | [Kaggle leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) | public on the dev images, private on the final images |
 | [Kaggle rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules) | the competition rules, binding for everyone who joins |
-| Hack Apertus Discord, Galaxus challenge channel | questions, commit hashes, the passphrase of the final images. The Discord names of the Galaxus hosts, on site on 27 and 28 November, are pinned there |
-| [Kaggle discussion](https://www.kaggle.com/competitions/hackapertus-galaxus/discussion) | questions, the passphrase of the final images |
+| Hack Apertus Discord, Galaxus challenge channel | questions and the passphrase of the final images. The Discord names of the Galaxus hosts, on site on 27 and 28 November, are pinned there |
+| [Kaggle discussion](https://www.kaggle.com/competitions/hackapertus-galaxus/discussion) | the passphrase of the final images |
 | [Resources & Tools](https://hackapertus.notion.site/zurich-resources-tools) | GPUs and the Apertus inference API of Hack Apertus |
 | [sprintd](https://app.sprintd.org/events/hack-apertus-zurich) | your project submission |
 
@@ -58,11 +59,11 @@ apply. In short:
 
 | When (CET) | What |
 | --- | --- |
-| Fri 27 Nov, 09:00 | Challenge pitches, then the deep dive with the matched teams. |
+| Fri 27 Nov, 09:00 | Challenge pitches. |
+| Fri 27 Nov, 10:30 | Deep dive with the matched teams. |
 | Fri 27 Nov, after the deep dive | Join the Kaggle competition with the link from the deep dive and accept its rules. Form your Kaggle team, named like your Hack Apertus team, before your first submission: Kaggle may refuse a later merge. Download the data and check the SHA-256 of final_encrypted.bin. |
 | During the hack | Train, and submit dev predictions to the public leaderboard (20 per day). |
-| Sat 28 Nov, before 13:30 | Publish your model weights, for example on Hugging Face, and post your commit hash and the revision of the weights in the Galaxus challenge channel on Discord. If you use Apertus unchanged, the commit hash is enough. |
-| Sat 28 Nov, 13:30 | We publish the passphrase of the final images in Discord and in the Discussion tab on Kaggle. Run your method on them: 5,292 images in one hour need at least 1.5 images per second; plan for 2. |
+| Sat 28 Nov, 13:00 | We publish the passphrase of the final images in Discord and in the Discussion tab on Kaggle. Run your method on them, for inference only. Plan for at least 2 images per second: the 5,292 images then take about 45 minutes, and your file is on Kaggle by 14:15. |
 | Sat 28 Nov, 14:30 | Deadline for the Kaggle submission and for your project submission on sprintd. |
 | Sat 28 Nov, 15:00 | Team pitches, 7 minutes plus 2 minutes of questions. The top 2 go on to the Zurich finals at 18:30. |
 
@@ -81,9 +82,11 @@ For this challenge the technical report also fills in section 7 of [technical_re
 scores, what mattered, models, resources and weights. Your README or section 6 of the report explains setup, training
 and inference with pinned dependencies, configs and seeds.
 
-After 13:30 you may fix your code, for example file paths, crashes or the output format, and show the changes as a
-diff. You may not train again or change the weights. We may rerun any team's code on the final images from the posted
-commit, weights and diff; a score that does not reproduce within its performance group may be disqualified
+There is no code freeze: you may work on your method until 14:30. The final images are for inference only: do not
+train or tune on them, and do not label them by hand. Section 7 of your technical report names the commit and the
+revision of the weights that produced your final submission; publish the weights, for example on Hugging Face, by
+14:30. If you use Apertus unchanged, the commit is enough. We may rerun any team's code on the final images from that
+commit and those weights; a score that does not reproduce within its performance group may be disqualified
 ([Kaggle rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules), Section B(7)).
 
 ## Evaluation
@@ -163,11 +166,11 @@ for dimension in metric.DIMENSIONS:
     unscored = (holdout[f"{dimension}_source"] == "model") | ~holdout[f"{dimension}_relevant"]
     solution.loc[unscored, dimension] = None
 submission = pd.read_csv("holdout_predictions.csv")
-metric.score(solution, submission, "image_id")
+print(metric.score(solution, submission, "image_id"))
 ```
 
 `score` returns the leaderboard number, `metric.evaluate` with the same arguments the F1, precision and recall per
-dimension and class.
+dimension and class. metric.py needs Python 3.10 and pandas 2.1 or newer.
 
 ### Submission file
 
@@ -180,16 +183,16 @@ One row per dev and final image, with a header:
 - Every cell holds a class name exactly as listed under Classes above and in labeling_guideline.md, none
   lowercase: None with a capital N is read as an empty cell. Kaggle rejects a file with an empty cell or an unknown
   class name, with a message; locally, metric.py counts an empty cell as a wrong answer.
-- Before 13:30 CET on 28 November, keep the final rows as in sample_submission.csv. They only affect the hidden
+- Before 13:00 CET on 28 November, keep the final rows as in sample_submission.csv. They only affect the hidden
   private score.
-- After 13:30 CET, predict the final images and upload one file with dev and final rows, before the deadline at
+- After 13:00 CET, predict the final images and upload one file with dev and final rows, before the deadline at
   14:30 CET (13:30 UTC). Kaggle scores the dev rows for the public and the final rows for the private
   leaderboard, separately: the dev rows of your final file do not change your final score, but they must be there
   and valid. The easiest way is your best dev file with the final rows replaced.
 - Kaggle counts the 20 daily submissions per UTC day, so 28 November starts at 01:00 CET: keep some for the final
-  hour from 13:30 to 14:30.
+  90 minutes from 13:00 to 14:30.
 - Upload by about 14:15 and select that submission for the final ranking: Kaggle must score a file before you can
-  select it. A submission from before 13:30 CET still carries the constant answers of sample_submission.csv for the
+  select it. A submission from before 13:00 CET still carries the constant answers of sample_submission.csv for the
   final images. If you select nothing, Kaggle takes your submission with the best public score, which may be one
   with the constant answers.
 - If Kaggle is down around the deadline, send your final file by direct message to the Galaxus hosts on Discord
@@ -223,6 +226,6 @@ advance to the Zurich finals follow the Hack Apertus process.
 
 The competition data and its labels are for this hackathon only: no commercial use, no passing them on, also not to
 other teams, and delete them afterwards. Your code and model weights are open source under the Hack Apertus T&C, but
-this repository and your published weights never contain images, csv files, labels or the passphrase; the .gitignore
-of this template keeps the data files out. You may show a few competition images in your pitch, pitch deck and demo
-video, but not in the technical report.
+this repository and your published weights never contain image files, csv files, labels or the passphrase; the
+.gitignore of this template keeps the data files out. You may show a few competition images in your pitch, pitch
+deck, demo video and technical report.
