@@ -15,6 +15,12 @@ submission: Kaggle may refuse a later merge.
 Yes. The Apertus v1.5 models on Hugging Face are gated: log in and accept their terms before you download them. You
 also publish your weights there or in a similar place.
 
+**What compute do we get?**
+Every member has a $10 Hugging Face coupon code in their sprintd account under Perks. On top, Hack Apertus gives each
+team up to $20 of Hugging Face compute: the team lead joins the Hack Apertus organization on Hugging Face. It is one
+pool for all teams, so please stay within your $20. Kaggle notebooks add 30 GPU hours per week for every account. An
+L40S on Hugging Face costs about $1.80 an hour.
+
 ## Models
 
 **Which Apertus?**
