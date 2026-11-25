@@ -65,7 +65,7 @@ exact commit.
   100,000 images per day.
 - **Commit and weights:** the commit that produced your final submission, and where its model weights are published,
   with the revision.
-- **Optional:** how many suspected label errors in train.csv you sent to the hosts as a csv (see CHALLENGE.md); the
+- **Optional:** how many suspected label errors in train.csv you sent to the hosts as a csv (see challenge_description.md); the
   csv itself is not committed here.
 
 
