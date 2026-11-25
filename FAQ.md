@@ -1,6 +1,6 @@
 # FAQ: Hack Apertus x Galaxus
 
-Short answers to the questions we expect. The full rules are in [CHALLENGE.md](CHALLENGE.md) and the
+Short answers to the questions we expect. The full rules are in [challenge_description.md](challenge_description.md) and the
 [Kaggle rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules); where they differ from this page, they
 apply. Anything else: ask in the Galaxus challenge channel on Discord.
 
@@ -94,7 +94,7 @@ publish the weights by 14:30. If you use Apertus unchanged, the commit is enough
 **How are we judged?**
 Performance on the final images is about 30%, counted in groups against our Qwen 3.5 9B and Gemini 3.8 Flash. The
 rest is innovation, speed and resources, insights and code quality: see
-[How we assess](CHALLENGE.md#how-we-assess).
+[How we assess](challenge_description.md#how-we-assess).
 
 **Is it worth focusing on a few dimensions?**
 The performance part uses the mean over all six. Very good perspective scores earn a bonus.
