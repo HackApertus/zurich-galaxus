@@ -36,7 +36,7 @@ labeling_guideline.pdf.
 | [Kaggle rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules) | the competition rules, binding for everyone who joins |
 | Hack Apertus Discord, Galaxus challenge channel | questions and the passphrase of the final images. The Discord names of the Galaxus hosts, on site on 27 and 28 November, are pinned there |
 | [Kaggle discussion](https://www.kaggle.com/competitions/hackapertus-galaxus/discussion) | the passphrase of the final images |
-| [Resources & Tools](https://hackapertus.notion.site/zurich-resources-tools) | GPUs and the Apertus inference API of Hack Apertus |
+| [Resources & Tools](https://hackapertus.notion.site/zurich-resources-tools) | GPUs and the Apertus inference API of Hack Apertus; the compute credits are in the [FAQ](FAQ.md) |
 | [sprintd](https://app.sprintd.org/events/hack-apertus-zurich) | your project submission |
 
 ## Models
