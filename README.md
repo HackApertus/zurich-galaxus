@@ -21,6 +21,7 @@ finetuned Qwen 3.5 9B that does this today.
 
 - **The challenge** (task, model rules, timeline, evaluation and submission file, what you hand in, how we assess): [challenge_description.md](challenge_description.md)
 - **Frequent questions:** [FAQ.md](FAQ.md)
+- **Reference notebook:** our Qwen 3.5 9B finetune on the Kaggle files, [reference/finetune_qwen35_reference.ipynb](reference/finetune_qwen35_reference.ipynb)
 - **On Kaggle:** [data](https://www.kaggle.com/competitions/hackapertus-galaxus/data), [leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) and [competition rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules)
 
 The competition data never goes into this repository: no image files, csv files, labels or the passphrase.
@@ -45,6 +46,7 @@ Keep the files and directories as shown below — don't rename or move them.
 | `README.md` | The challenge description and submission requirements |
 | `challenge_description.md` | The complete challenge description incl. deliverables: task, model rules, evaluation, what you hand in |
 | `FAQ.md` | Short answers to frequent questions about the challenge |
+| `reference/` | Our Qwen 3.5 9B finetune as a reference notebook, with the outputs of our run |
 | `technical_report.md` | The deeper write-up: architecture, evaluation, limitations |
 | `LICENSE` | Apache-2.0 |
 | `src/` | Your code |

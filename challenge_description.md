@@ -31,6 +31,7 @@ labeling_guideline.pdf.
 | Where | What |
 | --- | --- |
 | [FAQ.md](FAQ.md) | short answers to frequent questions |
+| [reference/finetune_qwen35_reference.ipynb](reference/finetune_qwen35_reference.ipynb) | our Qwen 3.5 9B recipe as a notebook: download from Kaggle, finetune, predict with vLLM, write the submission |
 | [Kaggle data](https://www.kaggle.com/competitions/hackapertus-galaxus/data) | images, labels, labeling guideline, scoring code, the encrypted final images |
 | [Kaggle leaderboard](https://www.kaggle.com/competitions/hackapertus-galaxus/leaderboard) | public on the dev images, private on the final images |
 | [Kaggle rules](https://www.kaggle.com/competitions/hackapertus-galaxus/rules) | the competition rules, binding for everyone who joins |
@@ -148,6 +149,10 @@ the Kaggle data page, and scales each image to about 512 x 512 pixels in area; t
 unchanged. The scores of Qwen 3.5 9B and
 Gemini 3.8 Flash on the final images set the performance groups of the challenge assessment. We publish their final
 scores with the private leaderboard.
+
+[reference/finetune_qwen35_reference.ipynb](reference/finetune_qwen35_reference.ipynb) runs the Qwen recipe from start
+to finish on the Kaggle files, with a short prompt of its own instead of our production prompt, and scores about as
+well as our Qwen baseline. Your method classifies with Apertus, but most of the notebook carries over.
 
 ### Scoring locally
 
