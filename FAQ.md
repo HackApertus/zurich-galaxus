@@ -33,7 +33,9 @@ image encoder, embeddings or OCR. Closed models and proprietary AI APIs are not 
 design still counts as Apertus classifying? Ask on Discord before you build it.
 
 **Can we get your production prompt?**
-No. labeling_guideline.md describes every class and convention our labelers followed.
+No. labeling_guideline.md describes every class and convention our labelers followed. The
+[reference notebook](reference/finetune_qwen35_reference.ipynb) finetunes Qwen 3.5 9B with a short prompt of its own
+and scores about as well as our baseline.
 
 **May Apertus run through the Hack Apertus inference API?**
 Yes, at runtime Apertus may run self-hosted or through that API. GPUs and the API are described on the
