@@ -1,7 +1,7 @@
 # Hack Apertus Zurich — Challenge Partner: Digitec Galaxus
 
 ## 🎯 The Challenge
-
+#LINK to join KAGGLE: https://www.kaggle.com/t/dcbddac04ad142f58865142245e1b41e
 ### Hack Apertus x Galaxus: product image classification
 https://www.kaggle.com/competitions/hackapertus-galaxus
 
